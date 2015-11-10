@@ -3,11 +3,14 @@ angular.module('lexikana.rw', [])
     $scope.read = true;
     $scope.newText = '';
     var newIndex;
-    var prevPages = [];
-    var nextPages = [];
-    var getPage = function (id) {
+    var currentPage;
+    $scope.atEnd = true;
+    $scope.atBeginning = true;
+
+    var getPage = function (lastPage) {
+      var id = lastPage ? lastPage.sentences[lastPage.sentences.length-1]._id : null;
       Sentences.getPage(id, function (sentenceList) {
-        $scope.sentences = sentenceList.data;
+        changePage(new Sentences.Page(sentenceList.data, lastPage))
       });
     }
     getPage(null);
@@ -23,18 +26,52 @@ angular.module('lexikana.rw', [])
     }
     $scope.send = function () {
       Sentences.sendText($scope.sentences[newIndex]._id, $scope.newText, function (sentenceList) {
-        $scope.sentences = $scope.before.concat(sentenceList.data);
+        var newPage = new Sentences.Page($scope.before.concat(sentenceList.data, currentPage.parent));
+        changePage(newPage);
         $scope.toggleRead();
       })
     };
     $scope.next = function () {
-      prevPages.push($scope.sentences);
-      getPage($scope.sentences[$scope.sentences.length -1]._id);
+      if(currentPage.children.length === 0) {
+        getPage(currentPage);
+      } else {
+        changePage(currentPage.children[currentPage.next]);
+      }
+      $scope.read = true;
     }
     $scope.previous = function () {
-      if(prevPages.length > 0) {
-        nextPages.push($scope.sentences);
-        $scope.sentences = prevPages.pop();
+      if(currentPage.parent) {
+        currentPage.parent.next = currentPage.branchIndex
+        changePage(currentPage.parent)
+      }
+      $scope.read = true;
+    }
+    $scope.previousBranch = function () {
+      if($scope.atBeginning) {
+        getPage(currentPage.parent);
+      } else if(currentPage.branchIndex) {
+        changePage(currentPage.parent.children[currentPage.branchIndex-1])
+      }
+    }
+    $scope.nextBranch = function () {
+      if($scope.atEnd) {
+        getPage(currentPage.parent);
+      } else if(currentPage.branchIndex || currentPage.branchIndex === 0) {
+        changePage(currentPage.parent.children[currentPage.branchIndex+1]);
+      }
+    }
+
+
+
+    var changePage = function (changeTo) {
+      currentPage = changeTo;
+      $scope.sentences = currentPage.sentences;
+      console.log(currentPage, changeTo)
+      if(currentPage.parent) {
+
+        currentPage.parent.next = currentPage.branchIndex;
+        $scope.atEnd = currentPage.branchIndex === currentPage.parent.children.length -1;
+        $scope.atBeginning = currentPage.branchIndex === 0;
       }
     }
   });

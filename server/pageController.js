@@ -5,7 +5,7 @@ var Sentence = require('./sentenceModel.js');
 var getPage = function (parentId, page, next) {
   return Sentence.find({'parent': parentId})
     .exec(function (err, children) {
-      if(page.len <= 20 && children.length) {
+      if(page.len <= 200 && children.length) {
         var child = children[Math.floor(children.length*Math.random())];
         page.push(child);
         page.len += child.text.length;

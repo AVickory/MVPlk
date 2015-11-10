@@ -32,5 +32,19 @@ angular.module('lexikana.services', [])
       }
       return JSON.stringify(sentArr);
     }
-    return {getPage: getPage, sendText: sendText};
+
+    var Page = function (sentences, parent) {
+      this.sentences = sentences;
+      this.children = [];
+      this.parent = parent ? parent : null;
+      this.branchIndex = null
+      this.next = null;
+      if(parent) {
+        parent.children.push(this);
+        this.branchIndex = parent.children.length - 1;
+        this.parent.next = this.branchIndex;
+      }
+    }
+
+    return {getPage: getPage, sendText: sendText, Page: Page};
   });

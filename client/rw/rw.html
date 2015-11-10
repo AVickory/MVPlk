@@ -1,7 +1,9 @@
 <div>
   <button ng-click='previous()'>Previous Page</button>
   <div>
-    <!-- <button ng-click='previousBranch()' style='display:inline-block;'>Previous Branch</button> -->
+    <button ng-click='previousBranch()' style='display:inline-block;'>
+      {{atBeginning ? 'New Branch' : 'Previous Branch'}}
+    </button>
     <div ng-show='read' style='display:inline-block;width:62%;'>
       <span ng-repeat='sentence in sentences track by $index' ng-click='toggleRead($index)'>{{sentence.text}}</span>
     </div>
@@ -10,7 +12,7 @@
         <input ng-model='newText'>
         <button ng-click='send()' style='display:block'>send</button>
     </div>
-    <button ng-click='newBranch()' style='display:inline-block;'>New Branch</button>
+    <button ng-click='nextBranch()' style='display:inline-block;'>{{atEnd ? 'New Branch' : 'Next Branch'}}</button>
   </div>
   <button ng-click='next()'>Next Page</button>
 </div>
