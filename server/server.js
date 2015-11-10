@@ -1,21 +1,17 @@
 var express = require('express');
 var mongoose = require('mongoose');
-  // var mongoose = require('mongoose');
+  var app = express();
+  mongoose.connect('mongodb://localhost:27017');
 
-var app = express();
-mongoose.connect('mongodb://localhost/lexikana');
+  // configure our server with all the middleware and and routing
+  require('./middleware.js')(app, express);
 
-// mongoose.connect('mongodb://localhost/shortly'); // connect to mongo database named shortly
+  // export our app for testing and flexibility, required by index.js
 
-// configure our server with all the middleware and and routing
-require('./middleware.js')(app, express);
+  app.listen(8000);
 
-// export our app for testing and flexibility, required by index.js
-
-app.listen(8000);
-
-module.exports = app;
-
+  module.exports = app;
+require('../mockupText/parser.js')
 
 /* Walkthrough of the server
 

@@ -1,0 +1,96 @@
+.logo {
+  display: inline-block;
+  position:absolute;
+  top: 0;
+  left: 0;
+  height: 420px;
+  width: 420px;
+
+}
+h1 {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 110px;
+  font-size: 100px;
+  text-shadow: -.05em .05em 10px #888;
+  margin: 0;
+}
+
+.f1 {
+  font-family: 'Poiret One', cursive;
+  top: -5px;
+  left: 110px;
+  text-shadow: -.03em .03em 10px #888;
+}
+
+.f2 {
+  font-family: 'Alef', sans-serif;
+  top: 140px;
+  left: 100px;
+  text-shadow: -.04em .04em 10px #888;
+}
+/*.f3 {
+  font-family: 'Questrial', sans-serif;
+  top: 0;
+  left: 110px;
+  font-size: 100px;
+  text-shadow: -.04em .04em 10px #888;
+}*/
+/*.f6 {
+  font-family: 'Gruppo', cursive;
+  top: 0;
+  left: 110px;
+  font-size: 100px;
+  text-shadow: -.04em .04em 10px #888;
+}*/
+/*.f2 {
+  font-family: 'Italiana', serif;
+  top: -5px;
+  left: 105px;
+  font-size: 100px;
+  text-shadow: -.05em .05em 10px #888;
+}*/
+/*.f2 {
+  font-family: 'Bubbler One', sans-serif;
+  top: -5px;
+  left: 110px;
+  text-shadow: -.03 .03 3px #888;
+}*/
+/*.f3 {
+  font-family: 'Snippet', sans-serif;
+  top: -5px;
+  left: 105px;
+  text-shadow: -.03em .03em 7px #888;
+}*/
+/*.f1 {
+  font-family: 'Megrim', cursive;
+  top: -7px;
+  left: 110px;
+  text-shadow: -.04em .04em 10px #888;  
+}*/
+
+.circle {
+  position: absolute;
+  background-color: #000;
+  box-shadow: -.15em .15em 0.20em #000;
+}
+
+.l {
+  background-color: #00a;
+  border-radius: 50%;
+
+}
+
+.k {
+  background-color: #0a0;
+  border-radius: 50%;
+}
+
+.L {
+  color: #00a;
+}
+
+.K {
+  color: #0a0;
+}

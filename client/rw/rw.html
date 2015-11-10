@@ -1,0 +1,10 @@
+<div>
+  <div ng-show='read'>
+    <span ng-repeat='sentence in sentences track by $index' ng-click='toggleRead($index)'>{{sentence.text}}</span>
+  </div>
+  <div ng-show='!read'>
+    <span ng-repeat='sentence in before track by $index' ng-click='toggleRead(index)'>{{sentence.text.toString()}}</span>
+      <input ng-model='newText' style='display:inline'>
+      <button ng-click='send()' style='display:block'>send</button>
+  </div>
+</div>

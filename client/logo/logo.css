@@ -1,0 +1,49 @@
+/*.logo {
+  display: inline-block;
+  float: left;
+}
+.logo-container {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+.logo-container .title {
+  display: inline-block;
+  height: 100%;
+  line-height: 100%
+}
+.logo-container .title span {
+  display: inline-block;
+  vertical-align: middle;
+  float: left;
+}
+.f1 {
+  font-family: 'Poiret One', cursive;
+  text-shadow: .05em .05em 0.1em #ddd;
+}
+.f2 {
+  font-family: 'Alef', sans-serif;
+  text-shadow: .01em .01em 0.05em #333;
+
+}
+.f3 {
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: ..05em .05em 0.1em #ddd;
+}
+
+/*.circle {
+  box-shadow: -.15em .15em 0.20em #000;
+}*/
+.l {
+  fill: #08f;
+}
+.k {
+  fill: #f80;
+}
+.L {
+  color: #08f;
+}
+.K {
+  color:#f80;
+}
+*/

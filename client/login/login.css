@@ -1,0 +1,68 @@
+/*.view {
+  margin: auto;
+  margin-top:10%;
+  height:50%;
+  font-family: 'Open Sans', sans-serif;
+}
+form {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+input {
+  display: inline;
+  border-width:0;
+}
+
+.password input::-webkit-input-placeholder {
+  color: #fd9;
+  text-transform: uppercase;
+}
+.password input::-moz-placeholder {
+  color: #fd9;
+  text-transform: uppercase;
+}
+.password input:-moz-placeholder {
+  color: #fd9;
+  text-transform: uppercase;
+}
+.password nput:-ms-input-placeholder { 
+  color: #fd9;
+  text-transform: uppercase;
+}
+
+.name input::-webkit-input-placeholder {
+  color: #9df;
+  text-transform: uppercase;
+}
+.name input::-moz-placeholder {
+  color: #9df;
+  text-transform: uppercase;
+}
+.name input:-moz-placeholder {
+  color: #9df;
+  text-transform: uppercase;
+}
+.name nput:-ms-input-placeholder { 
+  color: #9df;
+  text-transform: uppercase;
+}
+form span, input {
+  font-size: 16px;
+  margin-top: 5px;
+/*  vertical-align: top;
+/*  text-align: left;
+}
+
+button {
+  display: block;
+  width:100%;
+  margin-top: 10px;
+}
+.logo-container {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+*/

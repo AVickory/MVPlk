@@ -11,10 +11,9 @@ var shell = require('gulp-shell');
 // the paths to our app files
 var paths = {
   // all our client app js files, not including 3rd party js files
-  scripts: ['client/app/**/*.js'],
-  html: ['client/app/**/*.html', 'client/index.html'],
-  styles: ['client/styles/style.css'],
-  test: ['specs/**/*.js']
+  scripts: ['client/*.js'],
+  html: ['client/**/*.html', 'client/index.html'],
+  styles: ['client/*.css']
 };
 
 // any changes made to your

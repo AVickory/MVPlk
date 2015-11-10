@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<div ng-controller='SigninCtrl' id='signin'>
+
+  <div ng-controller='LogoCtrl' class='logo-container' style='height:{{logo.height}}px'>
+    <svg class="logo" style='height:{{logo.height}}px;width:{{logo.height}}px;' viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+      <filter id="drop-shadow" height="300%" width="300%"><feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"></feGaussianBlur><feOffset in="blur" dx="2" dy="2" result="offsetBlur"></feOffset><feMerge><feMergeNode in="offsetBlur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter><circle cx="164.4917471916789" cy="35.508252808321075" r="17.825080524999205" class="circle k" style="filter: url(#drop-shadow);"></circle><circle cx="115.22443632495948" cy="65.95712545825434" r="11.016505616652612" class="circle k" style="filter: url(#drop-shadow);"></circle><circle cx="84.77556367502622" cy="84.77556367502622" r="6.808574908344991" class="circle k" style="filter: url(#drop-shadow);"></circle><circle cx="164.4917471916789" cy="164.4917471916789" r="28.841586141654407" class="circle k" style="filter: url(#drop-shadow);"></circle><circle cx="134.04287454173684" cy="103.59400189180356" r="17.825080524999205" class="circle k" style="filter: url(#drop-shadow);"></circle><circle cx="115.22443632495948" cy="65.95712545825434" r="11.016505616652612" class="circle k" style="filter: url(#drop-shadow);"></circle><rect x="24.491747191668463" y="153.4752415750263" width="22.033011233305224" height="22.033011233305224" class="circle l" stroke-width="2" style="filter: url(#drop-shadow);"></rect><rect x="17.68317228332187" y="97.399355799963" width="35.65016104999841" height="35.65016104999841" class="circle l" stroke-width="2" style="filter: url(#drop-shadow);"></rect><rect x="6.666666666666668" y="6.666666666666668" width="57.683172283308814" height="57.683172283308814" class="circle l" stroke-width="2" style="filter: url(#drop-shadow);"></rect><rect x="24.491747191668463" y="153.4752415750263" width="22.033011233305224" height="22.033011233305224" class="circle l" stroke-width="2" style="filter: url(#drop-shadow);"></rect><rect x="77.96698876668123" y="157.68317228333393" width="13.617149816689983" height="13.617149816689983" class="circle l" stroke-width="2" style="filter: url(#drop-shadow);"></rect><rect x="111.01650561665558" y="160.28381648337228" width="8.415861416613263" height="8.415861416613263" class="circle l" stroke-width="2" style="filter: url(#drop-shadow);"></rect>
+    </svg>
+    <span class="logoText {{logo.font}}" style='font-size:{{logo.height - logo.margin}}px;margin-left:{{logo.biggestSize/2}}px'><!--
+        --><span class="L">L</span><!--
+        --><span>exi</span><!--
+        --><span class = "K">K</span><!--
+      --><span>ana</span>
+    </span>
+  </div>
+  <div></div>
+  <form name="signinForm" ng-submit='signin()'>
+    <div class='name'>
+      <span><span class='L'>P</span>en Name:</span>
+      <input type='text' ng-model='user.username' placeholder='Mark Twain'>
+    </div>
+    <div class='password'>
+      <span><span class='K'>P</span>assword:</span>
+      <input type="password" ng-model='user.password' placeholder='HuckFinF0r3v3r'>
+    </div>
+    <button>Sign In</button>
+  </form>
+
+</div>
