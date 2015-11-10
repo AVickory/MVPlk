@@ -13,14 +13,24 @@ angular.module('lexikana.services', [])
     var parseTextToArr = function (text) {
       var sent = '';
       var sentArr = [];
+      if(text[text.length - 2] !== '.' && text[text.length - 1] !== '.') {
+        if(text[text.length - 1] === '.') {
+          text += ' '
+        } else {
+          text += '. '
+        }
+      }
       for(var ci = 0; ci < text.length; ++ci) {
         var character = text[ci];
         sent += character;
         if(character === '.' || character === '\n') {
-          // character === '.' ? sentArr.push(sent) : ;
+          if(character === '.') {
+            sentArr.push(sent);
+          }
           sent = '';
         }
       }
+      return JSON.stringify(sentArr);
     }
     return {getPage: getPage, sendText: sendText};
   });

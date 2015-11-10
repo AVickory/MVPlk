@@ -5,15 +5,11 @@
   "main": "server/server.js",
   "repository":"",
   "scripts": {
-    "test": "karma start karma.conf.js",
     "start": "gulp",
     "lint": "jscs ./"
   },
-  "pre-commit": "lint",
   "license": "ISC",
   "devDependencies": {
-    "jshint-stylish": "^0.2.0",
-    "pre-commit": "^1.1.1"
   },
   "dependencies": {
     "body-parser": "^1.4.3",

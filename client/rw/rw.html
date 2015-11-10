@@ -1,10 +1,16 @@
 <div>
-  <div ng-show='read'>
-    <span ng-repeat='sentence in sentences track by $index' ng-click='toggleRead($index)'>{{sentence.text}}</span>
+  <button ng-click='previous()'>Previous Page</button>
+  <div>
+    <!-- <button ng-click='previousBranch()' style='display:inline-block;'>Previous Branch</button> -->
+    <div ng-show='read' style='display:inline-block;width:62%;'>
+      <span ng-repeat='sentence in sentences track by $index' ng-click='toggleRead($index)'>{{sentence.text}}</span>
+    </div>
+    <div ng-show='!read' style='display:inline-block;width:62%;'>
+      <span ng-repeat='sentence in before track by $index' ng-click='toggleRead($index)'>{{sentence.text.toString()}}</span>
+        <input ng-model='newText'>
+        <button ng-click='send()' style='display:block'>send</button>
+    </div>
+    <button ng-click='newBranch()' style='display:inline-block;'>New Branch</button>
   </div>
-  <div ng-show='!read'>
-    <span ng-repeat='sentence in before track by $index' ng-click='toggleRead(index)'>{{sentence.text.toString()}}</span>
-      <input ng-model='newText' style='display:inline'>
-      <button ng-click='send()' style='display:block'>send</button>
-  </div>
+  <button ng-click='next()'>Next Page</button>
 </div>

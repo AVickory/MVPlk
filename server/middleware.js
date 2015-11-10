@@ -11,7 +11,7 @@ module.exports = function (app, express) {
 
   app.route('/text/*')
     .get(pageController.sendPage)
-    //.post(pageController.addBranch);
+    .post(pageController.addBranch);
 
 
   // app.use('/', Router); // use user router for all user request
