@@ -8,21 +8,21 @@ angular.module('lexikana', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl:'rw/rw.html',
-        controller:'rwCtrl'
-      })
-      .when('/signin', {
         templateUrl: 'login/login.html',
         controller: 'SigninCtrl'
       })
+      .when('/rw', {
+        templateUrl:'rw/rw.html',
+        controller:'rwCtrl'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo:'/'
       })
   })
   .run(function ($rootScope, $location) {
     $rootScope.$on('$routeChangeStart', function (evt, next, current) {
       if (next.$$route) {
-        $location.path('/');
+        // $location.path('/signin');
       }
 
     });

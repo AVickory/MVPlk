@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<div ng-controller='SigninCtrl' id='signin'>
+<div id='signin'>
 
   <div ng-controller='LogoCtrl' class='logo-container' style='height:{{logo.height}}px'>
     <svg class="logo" style='height:{{logo.height}}px;width:{{logo.height}}px;' viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
@@ -14,7 +14,7 @@
   </div>
   <div></div>
   <form name="signinForm" ng-submit='signin()'>
-    <div class='name'>
+    <div class='username'>
       <span><span class='L'>P</span>en Name:</span>
       <input type='text' ng-model='user.username' placeholder='Mark Twain'>
     </div>
@@ -22,7 +22,8 @@
       <span><span class='K'>P</span>assword:</span>
       <input type="password" ng-model='user.password' placeholder='HuckFinF0r3v3r'>
     </div>
-    <button>Sign In</button>
+    <button ng-click='toRW()'>Sign In</button>
   </form>
+    <!-- <button ng-click='toRW()'>Sign In</button> -->
 
 </div>

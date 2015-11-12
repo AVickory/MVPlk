@@ -1,16 +1,16 @@
-/*.view {
+.view {
   margin: auto;
   margin-top:10%;
   height:50%;
   font-family: 'Open Sans', sans-serif;
 }
-form {
+#signin form {
   display: inline-block;
   position: relative;
   left: 50%;
   transform: translate(-50%, 0%);
 }
-input {
+#signin input {
   display: inline;
   border-width:0;
 }
@@ -32,37 +32,30 @@ input {
   text-transform: uppercase;
 }
 
-.name input::-webkit-input-placeholder {
+.username input::-webkit-input-placeholder {
   color: #9df;
   text-transform: uppercase;
 }
-.name input::-moz-placeholder {
+.username input::-moz-placeholder {
   color: #9df;
   text-transform: uppercase;
 }
-.name input:-moz-placeholder {
+.username input:-moz-placeholder {
   color: #9df;
   text-transform: uppercase;
 }
-.name nput:-ms-input-placeholder { 
+.username nput:-ms-input-placeholder { 
   color: #9df;
   text-transform: uppercase;
 }
-form span, input {
+#signin form span, input {
   font-size: 16px;
   margin-top: 5px;
-/*  vertical-align: top;
-/*  text-align: left;
 }
 
-button {
+#signin button {
   display: block;
   width:100%;
   margin-top: 10px;
 }
-.logo-container {
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0%);
-}
-*/
+

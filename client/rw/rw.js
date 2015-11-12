@@ -1,5 +1,7 @@
 angular.module('lexikana.rw', [])
   .controller('rwCtrl', function ($scope, $http, Sentences) {
+    $scope.logo = {};
+    $scope.logo.height = 75;
     $scope.read = true;
     $scope.newText = '';
     var newIndex;
@@ -7,6 +9,7 @@ angular.module('lexikana.rw', [])
     $scope.atEnd = true;
     $scope.atBeginning = true;
     var roots = [];
+    terminalPunctuation = {'!': true, '.': true, '?': true};
 
     var getPage = function (lastPage) {
       var id = lastPage ? lastPage.sentences[lastPage.sentences.length-1]._id : null;
@@ -27,6 +30,14 @@ angular.module('lexikana.rw', [])
       $scope.read = !$scope.read;
     }
     $scope.send = function () {
+      newText = $scope.newText
+      if(!terminalPunctuation[newText[newText.length-2]] && newText[newText.length-1] !== ' ') {
+        if(terminalPunctuation[newText[newText.length-1]]) {
+          newText += ' ';
+        } else {
+          newText += '. ';
+        }
+      }
       Sentences.sendText($scope.sentences[newIndex]._id, $scope.newText, function (sentenceList) {
         var newPage = new Sentences.Page($scope.before.concat(sentenceList.data, currentPage));
         changePage(newPage);
@@ -91,4 +102,23 @@ angular.module('lexikana.rw', [])
         }
       }
     }
+  })
+  .directive("contenteditable", function() {
+    return {
+      require: "ngModel",
+      link: function(scope, element, attrs, ngModel) {
+
+        function read() {
+          ngModel.$setViewValue(element.html());
+        }
+
+        ngModel.$render = function() {
+          element.html(ngModel.$viewValue || "");
+        };
+
+        element.bind("blur keyup change", function() {
+          scope.$apply(read);
+        });
+      }
+    };
   });

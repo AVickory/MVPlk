@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 
   // export our app for testing and flexibility, required by index.js
 
-  app.listen(8000);
+  app.listen(80);
 
   module.exports = app;
 require('../mockupText/parser.js')

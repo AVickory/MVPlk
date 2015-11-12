@@ -1,0 +1,182 @@
+body {
+  margin:0;
+  font-family: 'Open Sans', sans-serif;
+}
+/* LOGO */
+.logo {
+  display: inline-block;
+  float: left;
+}
+.logo-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+.logo-container .title {
+  display: inline-block;
+  height: 100%;
+  line-height: 100%;
+}
+.logo-container .title span {
+  display: inline-block;
+  vertical-align: middle;
+  float: left;
+}
+.f1 {
+  font-family: 'Poiret One', cursive;
+  text-shadow: .05em .05em 0.1em #ddd;
+}
+.l {
+  fill: #08f;
+}
+.k {
+  fill: #f80;
+}
+.L {
+  color: #08f;
+}
+.K {
+  color:#f80;
+}
+
+/* SIGNIN */
+
+#signin .logo-container {
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+#signin {
+  margin: auto;
+  margin-top:10%;
+  height:50%;
+}
+#signin form {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+#signin input {
+  display: inline;
+  border-width:0;
+}
+
+.password input::-webkit-input-placeholder {
+  color: #fd9;
+  text-transform: uppercase;
+}
+.password input::-moz-placeholder {
+  color: #fd9;
+  text-transform: uppercase;
+}
+.password input:-moz-placeholder {
+  color: #fd9;
+  text-transform: uppercase;
+}
+.password nput:-ms-input-placeholder { 
+  color: #fd9;
+  text-transform: uppercase;
+}
+
+.username input::-webkit-input-placeholder {
+  color: #9df;
+  text-transform: uppercase;
+}
+.username input::-moz-placeholder {
+  color: #9df;
+  text-transform: uppercase;
+}
+.username input:-moz-placeholder {
+  color: #9df;
+  text-transform: uppercase;
+}
+.username nput:-ms-input-placeholder { 
+  color: #9df;
+  text-transform: uppercase;
+}
+#signin form span, input {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+#signin button {
+  display: block;
+  width:100%;
+  margin-top: 10px;
+}
+
+/* READ/WRITE*/
+
+#rw .previousPage, #rw .nextPage {
+  position:relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.main {
+  position:relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: inline-block;
+  width: 100%;
+  margin: auto;
+}
+
+.main button {
+  display: inline-block;
+  width: 11.9%;
+  margin-left: 3%;
+  margin-right: 3%
+}
+
+.main .page button {
+  display: block;
+}
+
+.main .page .input {
+  display: inline-block;
+  box-sizing:border-box;
+  width: 100%;
+  /*padding: 7.5%;*/
+}
+
+.main .page .inputContainer {
+  display: inline-block;
+  border:3px solid #f80;
+  max-width: 100%;
+  min-width: 10%;
+  border-radius: 10px 10px;
+}
+
+.main .page {
+  display:inline-block;
+  box-sizing:border-box;
+  width: 62%;
+  padding: 10px;
+}
+
+.main .page.true {
+  border:3px solid #08f;
+}
+.main .page.false {
+  border:3px solid #f80;
+  border-radius: 10px;
+}
+
+#rw button.true {
+  background-color: #08f;
+  padding: 10px;
+}
+
+#rw button.false {
+  background-color: #f80;
+  border-radius: 50% 50%;
+  padding: 10px;
+
+}
+
+

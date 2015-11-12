@@ -4,7 +4,7 @@ var Sentence = require('./sentenceModel.js');
 
 var getPage = function (parent, page, next) {
   var children = parent.children
-  if(page.len <= 200 && children.length) {
+  if(page.len <= 100 && children.length) {
     var childId = children[Math.floor(children.length*Math.random())];
     Sentence.findById(childId, function (err, child) {
       page.push(child);
@@ -42,7 +42,6 @@ module.exports.sendPage = function (req, res) {
 module.exports.addBranch = function (req, res) {
   var previousSentenceId = req.url.split('/text/');
   previousSentenceId = previousSentenceId[previousSentenceId.length-1]
-  console.log('req', req.body);
   var sentences = req.body;
 
   var writeSentence = function (parent, index, callback) {
@@ -61,14 +60,14 @@ module.exports.addBranch = function (req, res) {
     Sentence.create({text: sentences[0], parent: null}, function (err, parent) {
       writeSentence(parent, 1, function () {
         res.json(sentences);
-        console.log('gotcha!');
+        // console.log('gotcha!');
       });
     });
   } else {
     Sentence.findById(previousSentenceId, function (err, parent) {
       writeSentence(parent, 0, function () {
         res.json(sentences);
-        console.log('gotcha!');
+        // console.log('gotcha!');
       });
     });
   }
